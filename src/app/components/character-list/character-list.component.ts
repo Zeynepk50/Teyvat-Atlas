@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CharacterService } from '../../services/character.service';
 import { Character } from '../../models/character.model';
 
@@ -18,7 +19,7 @@ export class CharacterListComponent implements OnInit {
   searchQuery = '';
   isSearchMode = false;
 
-  constructor(private characterService: CharacterService) {}
+  constructor(private characterService: CharacterService, private router: Router) {}
 
   ngOnInit(): void {
     this.loadPage(1);
@@ -68,5 +69,7 @@ export class CharacterListComponent implements OnInit {
     return Math.min(this.currentPage * this.characterService.PAGE_SIZE, this.totalCount);
   }
 
-  selectedCharacter: Character | null = null;
+  goTo(id: string) {
+    this.router.navigate(['/character', id]);
+  }
 }

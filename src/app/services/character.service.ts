@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, forkJoin, of } from 'rxjs';
+import { Observable, forkJoin, of, throwError } from 'rxjs';
 import { map, switchMap, tap, catchError } from 'rxjs/operators';
 import { Character, CharacterDetail } from '../models/character.model';
 
@@ -155,6 +155,60 @@ export class CharacterService {
         this.cacheLoaded = true;
       }),
       catchError(() => of([] as Character[]))
+    );
+  }
+
+  getCharacter(id: string): Observable<Character> {
+    if (!id || id.trim() === '') {
+      return throwError(() => new Error('Invalid character ID'));
+    }
+
+    return this.http.get<CharacterDetail>(`${this.BASE}/characters/${id}`).pipe(
+      map((detail) => this.buildCharacter(id, detail)),
+      catchError(() => {
+        return this.http.get<any[]>('assets/characters.json').pipe(
+          map((locals) => {
+            const arr = Array.isArray(locals) ? locals : (locals ? [locals] : []);
+            const l = arr.find((c: any) => c?.id === id);
+            if (!l) throw new Error('Character not found');
+            return {
+              id: l.id || id,
+              name: l.name || 'Unknown',
+              element: this.normalizeElement(l.element),
+              weapon: this.normalizeWeapon(l.weapon),
+              rarity: (parseInt(l.rarity) as 4 | 5) || 4,
+              nation: l.nation,
+              affiliation: l.affiliation,
+              description: l.description,
+              iconUrl: l.iconUrl || `${this.BASE}/characters/${l.id || id}/icon`,
+              portraitUrl: l.portraitUrl || `${this.BASE}/characters/${l.id || id}/portrait`,
+            } as Character;
+          }),
+          catchError(() => {
+            throw new Error('Character not found in API or local storage');
+          })
+        );
+      })
+    );
+  }
+
+  getCharacterDetail(id: string): Observable<any> {
+    if (!id || id.trim() === '') {
+      return of(null);
+    }
+
+    return this.http.get<any>(`${this.BASE}/characters/${id}`).pipe(
+      catchError(() =>
+        this.http.get<any[]>('assets/characters.json').pipe(
+          map((locals) => {
+            const arr = Array.isArray(locals) ? locals : (locals ? [locals] : []);
+            const l = arr.find((c: any) => c?.id === id);
+            if (!l) return null;
+            return l;
+          }),
+          catchError(() => of(null))
+        )
+      )
     );
   }
 

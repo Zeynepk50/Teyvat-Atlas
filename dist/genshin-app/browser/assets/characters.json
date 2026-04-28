@@ -1,0 +1,342 @@
+[
+  { "id": "aether",          "name": "Aether",           "element": "anemo",   "weapon": "sword",    "rarity": 5, "nation": "Mondstadt", "constellation": "Viator",              "title": "Traveler",                        "description": "A traveler from another world who had their only kin taken away, journeying through Teyvat in search of The Seven." },
+  { "id": "lumine",          "name": "Lumine",           "element": "anemo",   "weapon": "sword",    "rarity": 5, "nation": "Mondstadt", "constellation": "Viator",              "title": "Traveler",                        "description": "A traveler from another world who had their only kin taken away, journeying through Teyvat in search of The Seven." },
+  { "id": "albedo",          "name": "Albedo",           "element": "geo",     "weapon": "sword",    "rarity": 5, "nation": "Mondstadt", "constellation": "Princeps Cretaceus",  "title": "Chalk Prince and the Dragon",     "description": "Chief Alchemist and Captain of the Investigation Team of the Knights of Favonius. A man of few words who believes that everything has its own set of rules." },
+  { "id": "alhaitham",       "name": "Al-Haitham",       "element": "dendro",  "weapon": "sword",    "rarity": 5, "nation": "Sumeru",    "constellation": "Vultur Volans",       "title": "Pai Shuo Ye",                     "description": "The Scribe of the Sumeru Akademiya. Possessed of extraordinary intelligence, he acts only in accordance with his own judgment." },
+  { "id": "aloy",            "name": "Aloy",             "element": "cryo",    "weapon": "bow",      "rarity": 5, "nation": "Other",     "constellation": "Nora Fortis",         "title": "Savior From Another World",       "description": "A huntress from beyond the world's boundaries, skilled in tracking, hunting, and the use of ancient machines." },
+  { "id": "amber",           "name": "Amber",            "element": "pyro",    "weapon": "bow",      "rarity": 4, "nation": "Mondstadt", "constellation": "Lepus",               "title": "Outrider",                        "description": "Always energetic and full of life, Amber is the best and only Outrider of the Knights of Favonius." },
+  { "id": "arataki-itto",    "name": "Arataki Itto",     "element": "geo",     "weapon": "claymore", "rarity": 5, "nation": "Inazuma",   "constellation": "Taurus Iracundus",    "title": "The Hanamizaka Heroic Chief",     "description": "The leader of the Arataki Gang, famed throughout Inazuma. He's loud, boisterous, and charges into every challenge like a bull." },
+  { "id": "arlecchino",      "name": "Arlecchino",       "element": "pyro",    "weapon": "polearm",  "rarity": 5, "nation": "Snezhnaya", "constellation": "Ignis Purgatorius",   "title": "The Knave",                       "description": "Fourth of the Fatui Harbingers. A poised, ruthless diplomat who adopted orphans and raised them as Fatui agents." },
+  { "id": "baizhu",          "name": "Baizhu",           "element": "dendro",  "weapon": "catalyst", "rarity": 5, "nation": "Liyue",     "constellation": "Lagenaria",           "title": "Healer of Nature",                "description": "The owner of Bubu Pharmacy in Liyue Harbor. An eccentric but knowledgeable physician who treats patients while hiding a secret about his own health." },
+  { "id": "barbara",         "name": "Barbara",          "element": "hydro",   "weapon": "catalyst", "rarity": 4, "nation": "Mondstadt", "constellation": "Crater",              "title": "Deaconess",                       "description": "A deaconess of the Church of Favonius who is loved by all. She diligently studies the way of the gods for their sake." },
+  { "id": "beidou",          "name": "Beidou",           "element": "electro", "weapon": "claymore", "rarity": 4, "nation": "Liyue",     "constellation": "Victor Mare",         "title": "Uncrowned Lord of the Ocean",     "description": "Captain of The Crux and uncrowned Lord of the Ocean. A legendary figure who built a massive fleet from nothing through sheer will." },
+  { "id": "bennett",         "name": "Bennett",          "element": "pyro",    "weapon": "sword",    "rarity": 4, "nation": "Mondstadt", "constellation": "Rota Calamitas",      "title": "Trial by Fire",                   "description": "A righteous and courageous adventurer from Mondstadt who is unfortunately cursed with incredibly bad luck." },
+  { "id": "candace",         "name": "Candace",          "element": "hydro",   "weapon": "polearm",  "rarity": 4, "nation": "Sumeru",    "constellation": "Crater Intercalaris", "title": "Golden-Haired Guardian",          "description": "The guardian of Aaru Village in Sumeru. She protects her people with the power of a god flowing through her veins." },
+  { "id": "charlotte",       "name": "Charlotte",        "element": "cryo",    "weapon": "catalyst", "rarity": 4, "nation": "Fontaine",  "constellation": "Columba",             "title": "Frozen Record",                   "description": "A reporter for The Steambird newspaper in Fontaine. She pursues truth and scoops with relentless, unwavering dedication." },
+  { "id": "chasca",          "name": "Chasca",           "element": "anemo",   "weapon": "bow",      "rarity": 5, "nation": "Natlan",    "constellation": "Tempestas Barbata",   "title": "Voice of the Night Wind",         "description": "A half-human, half-Saurian hunter from Natlan who rides the wind with unparalleled skill and quiet resolve." },
+  { "id": "chevreuse",       "name": "Chevreuse",        "element": "pyro",    "weapon": "polearm",  "rarity": 4, "nation": "Fontaine",  "constellation": "Pluma Aegis",         "title": "Head of Special Security",        "description": "Head of the Special Security and Surveillance Patrol in Fontaine. Strict, disciplined, and fiercely protective of those under her command." },
+  { "id": "chiori",          "name": "Chiori",           "element": "geo",     "weapon": "sword",    "rarity": 5, "nation": "Inazuma",   "constellation": "Aurum Pavo Ocellus",  "title": "The Thundering Seamstress",       "description": "A fashion designer from Inazuma who runs a boutique in Fontaine, fusing traditional Inazuman aesthetics with Fontainian elegance." },
+  { "id": "chongyun",        "name": "Chongyun",         "element": "cryo",    "weapon": "claymore", "rarity": 4, "nation": "Liyue",     "constellation": "Nubis Caesor",        "title": "Frozen Heart",                    "description": "A young exorcist from Liyue whose spiritual powers are so strong that no evil can approach him, making his work rather difficult." },
+  { "id": "citlali",         "name": "Citlali",          "element": "cryo",    "weapon": "catalyst", "rarity": 5, "nation": "Natlan",    "constellation": "Tlaltecuhtli",        "title": "Ofrenda of the Night",            "description": "An Ofrenda from Natlan who carries the blessings of the night. She weaves ice and moonlight with quiet, steadfast resolve." },
+  { "id": "collei",          "name": "Collei",           "element": "dendro",  "weapon": "bow",      "rarity": 4, "nation": "Sumeru",    "constellation": "Cista Salutaris",     "title": "Forest Ranger Trainee",           "description": "A forest ranger trainee from Sumeru who overcame a traumatic past. She now dedicates herself to protecting the forest with hopeful determination." },
+  { "id": "cyno",            "name": "Cyno",             "element": "electro", "weapon": "polearm",  "rarity": 5, "nation": "Sumeru",    "constellation": "Lupus Aureus",        "title": "General Mahamatra",               "description": "General Mahamatra of the Akademiya, tasked with policing academic misconduct. Stern and intimidating, but secretly passionate about card games." },
+  { "id": "dehya",           "name": "Dehya",            "element": "pyro",    "weapon": "claymore", "rarity": 5, "nation": "Sumeru",    "constellation": "Ferrum Medusae",      "title": "Flame-Mane",                      "description": "A renowned mercenary operating in the Sumeru desert. She protects others with ferocious courage and an unmistakably golden heart." },
+  { "id": "diluc",           "name": "Diluc",            "element": "pyro",    "weapon": "claymore", "rarity": 5, "nation": "Mondstadt", "constellation": "Noctua",              "title": "Dark Side of Dawn",               "description": "The darknight hero of Mondstadt and owner of Dawn Winery. He works in the shadows to protect his city, disillusioned with the Knights of Favonius." },
+  { "id": "diona",           "name": "Diona",            "element": "cryo",    "weapon": "bow",      "rarity": 4, "nation": "Mondstadt", "constellation": "Feles",               "title": "Kätzlein Cocktail",               "description": "A young bartender at the Cat's Tail tavern who hates alcohol but is paradoxically the most talented cocktail maker around." },
+  { "id": "dori",            "name": "Dori",             "element": "electro", "weapon": "claymore", "rarity": 4, "nation": "Sumeru",    "constellation": "Salvadora",           "title": "Lord of Amugalan",                "description": "A traveling merchant who sells exotic goods throughout Sumeru. Nothing is beyond her reach if the price is right." },
+  { "id": "emilie",          "name": "Emilie",           "element": "dendro",  "weapon": "polearm",  "rarity": 5, "nation": "Fontaine",  "constellation": "Scutum Odoris",       "title": "The Fragrance That Permeates",    "description": "A perfumer from Fontaine who creates fragrances from the essence of the rainforest. Her scents are said to carry the soul of nature itself." },
+  { "id": "eula",            "name": "Eula",             "element": "cryo",    "weapon": "claymore", "rarity": 5, "nation": "Mondstadt", "constellation": "Aphros Delos",        "title": "Spindrift Knight",                "description": "Captain of the Knights of Favonius Reconnaissance Company. A descendant of the infamous Lawrence Clan who fights to forge her own legacy." },
+  { "id": "faruzan",         "name": "Faruzan",          "element": "anemo",   "weapon": "bow",      "rarity": 4, "nation": "Sumeru",    "constellation": "Flosculi Implexi",    "title": "Enigmatic Machinist",             "description": "A researcher who was trapped in a ruin for 100 years. She emerged with knowledge of ancient technology far ahead of her time." },
+  { "id": "fischl",          "name": "Fischl",           "element": "electro", "weapon": "bow",      "rarity": 4, "nation": "Mondstadt", "constellation": "Corvus",              "title": "Fischl von Luftschloss Narfidort","description": "An investigator for the Adventurers' Guild who speaks in an elaborate, archaic manner and claims to be a princess from another world." },
+  { "id": "freminet",        "name": "Freminet",         "element": "cryo",    "weapon": "claymore", "rarity": 4, "nation": "Fontaine",  "constellation": "Pisces",              "title": "Deepwater Observer",              "description": "A quiet, introverted diver in Fontaine who prefers the solitude of the deep sea and is extremely skilled at underwater exploration." },
+  { "id": "furina",          "name": "Furina",           "element": "hydro",   "weapon": "sword",    "rarity": 5, "nation": "Fontaine",  "constellation": "Animula Choragi",     "title": "God of Justice",                  "description": "The Hydro Archon who presides over Fontaine's Court. She maintains a theatrical public persona while hiding the burden of a centuries-old secret." },
+  { "id": "gaming",          "name": "Gaming",           "element": "pyro",    "weapon": "claymore", "rarity": 4, "nation": "Liyue",     "constellation": "Pavo Ocellus",        "title": "Carefree Lionhead",               "description": "A passionate young man in Liyue who trains in martial arts and performs lion dances with boundless, infectious energy." },
+  { "id": "ganyu",           "name": "Ganyu",            "element": "cryo",    "weapon": "bow",      "rarity": 5, "nation": "Liyue",     "constellation": "Sinae Unicornis",     "title": "Plenilune Gaze",                  "description": "Secretary at Yuehai Pavilion and emissary for the Liyue Qixing. A half-qilin with an extraordinarily diligent and reserved personality." },
+  { "id": "gorou",           "name": "Gorou",            "element": "geo",     "weapon": "bow",      "rarity": 4, "nation": "Inazuma",   "constellation": "Canis Bellator",      "title": "Inazuma's Finest",                "description": "General of the Watatsumi Army and a fierce defender of his people. His loyalty and bravery on the battlefield are legendary." },
+  { "id": "hu-tao",          "name": "Hu Tao",           "element": "pyro",    "weapon": "polearm",  "rarity": 5, "nation": "Liyue",     "constellation": "Papilio Charontis",   "title": "Fragrance in Thaw",               "description": "The 77th Director of the Wangsheng Funeral Parlor. Cheerful and mischievous, she manages her parlor with poetic flair and genuine care for the departed." },
+  { "id": "jean",            "name": "Jean",             "element": "anemo",   "weapon": "sword",    "rarity": 5, "nation": "Mondstadt", "constellation": "Leo Minor",           "title": "Dandelion Knight",                "description": "Acting Grand Master of the Knights of Favonius. She works tirelessly for the peace and safety of Mondstadt, embodying the city's ideals." },
+  { "id": "kachina",         "name": "Kachina",          "element": "geo",     "weapon": "polearm",  "rarity": 4, "nation": "Natlan",    "constellation": "Testudo Fulgidus",    "title": "Turbo Puffball",                  "description": "A young warrior from the Flower-Feather Clan of Natlan, always eager to prove herself through battle and sheer determination." },
+  { "id": "kaeya",           "name": "Kaeya",            "element": "cryo",    "weapon": "sword",    "rarity": 4, "nation": "Mondstadt", "constellation": "Pavo Ocellus",        "title": "Cavalry Captain",                 "description": "Cavalry Captain of the Knights of Favonius. Suave and cunning, he hides a complex past behind his easy smile and casual demeanor." },
+  { "id": "kamisato-ayaka",  "name": "Kamisato Ayaka",   "element": "cryo",    "weapon": "sword",    "rarity": 5, "nation": "Inazuma",   "constellation": "Grus Nivis",          "title": "Shirasagi Himegimi",              "description": "Daughter of the Kamisato Clan and a practitioner of the Kamisato Art. Graceful and refined, she bears the weight of her clan's honor with quiet strength." },
+  { "id": "kamisato-ayato",  "name": "Kamisato Ayato",   "element": "hydro",   "weapon": "sword",    "rarity": 5, "nation": "Inazuma",   "constellation": "Cypressus Custos",    "title": "Pillar of Fortitude",             "description": "Head of the Kamisato Clan and the Yashiro Commissioner. He governs with decisive intelligence, always several steps ahead of his opponents." },
+  { "id": "kaveh",           "name": "Kaveh",            "element": "dendro",  "weapon": "claymore", "rarity": 4, "nation": "Sumeru",    "constellation": "Paradisaea",          "title": "The Light of Kshahrewar",         "description": "A brilliant architect from Sumeru who designed the Palace of Alcazarzaray. Despite his talent, he struggles with debt and self-doubt." },
+  { "id": "kazuha",          "name": "Kazuha",           "element": "anemo",   "weapon": "sword",    "rarity": 5, "nation": "Inazuma",   "constellation": "Acer Palmatum",       "title": "Red-Leafed Wanderer",             "description": "A wandering samurai who fled Inazuma following a fateful duel. He finds beauty in the world's sounds and carries grief behind his calm demeanor." },
+  { "id": "keqing",          "name": "Keqing",           "element": "electro", "weapon": "sword",    "rarity": 5, "nation": "Liyue",     "constellation": "Trulla Cementarii",   "title": "Driving Thunder",                 "description": "The Yuheng of the Liyue Qixing. Highly competent and skeptical of gods, she believes humanity should forge its own future without divine help." },
+  { "id": "kinich",          "name": "Kinich",           "element": "dendro",  "weapon": "claymore", "rarity": 5, "nation": "Natlan",    "constellation": "Caudata",             "title": "Fiery Quetzalcoatl",              "description": "A debt-ridden hunter from Natlan who forged a contract with a pyro spirit to repay what he owes, fighting with reckless abandon." },
+  { "id": "kirara",          "name": "Kirara",           "element": "dendro",  "weapon": "sword",    "rarity": 4, "nation": "Inazuma",   "constellation": "Arcubus Favillae",    "title": "Nekomata Express",                "description": "A courier who can transform into a cat-box. She's cheerful, hardworking, and delivers packages across Inazuma with incredible speed." },
+  { "id": "klee",            "name": "Klee",             "element": "pyro",    "weapon": "catalyst", "rarity": 5, "nation": "Mondstadt", "constellation": "Trifolium",           "title": "Spark Knight",                    "description": "A little pyrotechnics prodigy and Spark Knight of the Knights of Favonius. Her love of explosions regularly gets her confined to solitary." },
+  { "id": "kokomi",          "name": "Kokomi",           "element": "hydro",   "weapon": "catalyst", "rarity": 5, "nation": "Inazuma",   "constellation": "Dracaena Somnolenta", "title": "Divine Priestess",                "description": "Divine Priestess of Watatsumi Island. She leads her people with wisdom beyond her years, despite being exhausted by the demands of her duties." },
+  { "id": "kukki-shinobu",   "name": "Kuki Shinobu",     "element": "electro", "weapon": "sword",    "rarity": 4, "nation": "Inazuma",   "constellation": "Tribulatio Tertia",   "title": "Deputy Leader",                   "description": "Deputy leader of the Arataki Gang who keeps the group from complete chaos. She passed the bar exam in three regions and is unfailingly competent." },
+  { "id": "layla",           "name": "Layla",            "element": "cryo",    "weapon": "sword",    "rarity": 4, "nation": "Sumeru",    "constellation": "Luscinia",            "title": "Stargazer",                       "description": "A student at the Sumeru Akademiya who studies astrology. She suffers from chronic sleep deprivation due to her mysterious sleepwalking." },
+  { "id": "lisa",            "name": "Lisa",             "element": "electro", "weapon": "catalyst", "rarity": 4, "nation": "Mondstadt", "constellation": "Tempus Fugit",        "title": "Librarian",                       "description": "Librarian of the Knights of Favonius. The most gifted mage to graduate from Sumeru in 200 years, she chose a quiet life of books over academia." },
+  { "id": "lynette",         "name": "Lynette",          "element": "anemo",   "weapon": "sword",    "rarity": 4, "nation": "Fontaine",  "constellation": "Felis Elsewhere",     "title": "Enigmatic Inquisitor",            "description": "Lyney's younger sister and stage assistant. Reserved and sharp-eyed, she supports her brother's performances with silent, precise skill." },
+  { "id": "lyney",           "name": "Lyney",            "element": "pyro",    "weapon": "bow",      "rarity": 5, "nation": "Fontaine",  "constellation": "Felis Aurea",         "title": "Pride of the Magicians",          "description": "A young magician performing in Fontaine's Grand Maison theater. Charming and theatrical, he conceals his true nature as a Fatui agent." },
+  { "id": "mavuika",         "name": "Mavuika",          "element": "pyro",    "weapon": "claymore", "rarity": 5, "nation": "Natlan",    "constellation": "Ignium Dei",          "title": "Pyro Archon",                     "description": "The Pyro Archon and protector of the Nation of Fire. She embodies the will to burn brightly for those she loves, no matter the cost." },
+  { "id": "mika",            "name": "Mika",             "element": "cryo",    "weapon": "polearm",  "rarity": 4, "nation": "Mondstadt", "constellation": "Rota Calamitas",      "title": "Coordinates of Clear Skies",      "description": "A young member of the Knights of Favonius Reconnaissance Company who maps uncharted territories with earnest, detail-oriented care." },
+  { "id": "mona",            "name": "Mona",             "element": "hydro",   "weapon": "catalyst", "rarity": 5, "nation": "Mondstadt", "constellation": "Astrolabos",          "title": "Astral Reflection",               "description": "A young astrologist who claims to predict fate itself. Proud of her astrological skill but perpetually struggling with financial troubles." },
+  { "id": "mualani",         "name": "Mualani",          "element": "hydro",   "weapon": "catalyst", "rarity": 5, "nation": "Natlan",    "constellation": "Carcharos",           "title": "Wave Rider",                      "description": "A cheerful and energetic young woman from Natlan who surfs waves and fights alongside her shark spirit with infectious enthusiasm." },
+  { "id": "nahida",          "name": "Nahida",           "element": "dendro",  "weapon": "catalyst", "rarity": 5, "nation": "Sumeru",    "constellation": "Sapientia Oromasdis", "title": "Lesser Lord Kusanali",            "description": "The Dendro Archon who was confined within the Sanctuary of Surasthana for 500 years. She explores the world with boundless curiosity and compassion." },
+  { "id": "navia",           "name": "Navia",            "element": "geo",     "weapon": "claymore", "rarity": 5, "nation": "Fontaine",  "constellation": "Aegis Ingentis",      "title": "Lady of Hearth and Home",         "description": "President of Spina di Rosula and daughter of the late Callas. She leads her faction with grace and fierce loyalty to her late father's ideals." },
+  { "id": "neuvillette",     "name": "Neuvillette",      "element": "hydro",   "weapon": "catalyst", "rarity": 5, "nation": "Fontaine",  "constellation": "Leviathan Iudicator", "title": "Iudex",                           "description": "Chief Justice of Fontaine's Oratrice Mecanique. Ancient, impartial, and quietly sorrowful, he embodies the law itself in every judgment." },
+  { "id": "nilou",           "name": "Nilou",            "element": "hydro",   "weapon": "sword",    "rarity": 5, "nation": "Sumeru",    "constellation": "Lotos Archisaecularis","title": "Gift of Lotus",                  "description": "A dancer at the Zubayr Theater in Sumeru who dances to honor the gods. Her performances carry a deep sincerity and spiritual devotion." },
+  { "id": "ningguang",       "name": "Ningguang",        "element": "geo",     "weapon": "catalyst", "rarity": 4, "nation": "Liyue",     "constellation": "Opus Aequilibrium",   "title": "Tianquan",                        "description": "The Tianquan of the Liyue Qixing. A self-made woman of extraordinary wealth and influence who built the Jade Chamber from nothing." },
+  { "id": "noelle",          "name": "Noelle",           "element": "geo",     "weapon": "claymore", "rarity": 4, "nation": "Mondstadt", "constellation": "Parma Favonius",      "title": "Chivalric Blossom",               "description": "A maid at the Knights of Favonius headquarters who dreams of becoming a true knight. She protects others with her shield and unyielding spirit." },
+  { "id": "ororon",          "name": "Ororon",           "element": "electro", "weapon": "bow",      "rarity": 4, "nation": "Natlan",    "constellation": "Cycas Occulta",       "title": "Night-Wind's Mystic Voice",       "description": "A mysterious young man from Natlan with the gift of hearing the voices of spirits, even those who have long since fallen silent." },
+  { "id": "qiqi",            "name": "Qiqi",             "element": "cryo",    "weapon": "sword",    "rarity": 5, "nation": "Liyue",     "constellation": "Pristina Nivalnia",   "title": "Icy Resurrection",                "description": "An apprentice and herb gatherer at Bubu Pharmacy. A zombie kept alive by ancient adeptal techniques, she forgets things almost instantly." },
+  { "id": "raiden",          "name": "Raiden Shogun",    "element": "electro", "weapon": "polearm",  "rarity": 5, "nation": "Inazuma",   "constellation": "Imperatrix Umbrosa",  "title": "Plane of Euthymia",               "description": "The Electro Archon who rules Inazuma through her Vision Hunt Decree. She seeks eternity, unaware of the toll her centuries of isolation take." },
+  { "id": "razor",           "name": "Razor",            "element": "electro", "weapon": "claymore", "rarity": 4, "nation": "Mondstadt", "constellation": "Lupus Minor",         "title": "Wolf Boy",                        "description": "A young boy raised by wolves in Wolvendom. He channels electro power through raw instinct and fights with primal ferocity." },
+  { "id": "rosaria",         "name": "Rosaria",          "element": "cryo",    "weapon": "polearm",  "rarity": 4, "nation": "Mondstadt", "constellation": "Spinea Corona",       "title": "Thorny Benevolence",              "description": "A sister of the Church of Favonius who operates outside conventional doctrine. She prefers the shadows and handles things her own way." },
+  { "id": "sara",            "name": "Kujou Sara",       "element": "electro", "weapon": "bow",      "rarity": 4, "nation": "Inazuma",   "constellation": "Flabellum",           "title": "Tengu Warrior",                   "description": "General of the Tenryou Commission and a fierce loyalist to the Shogun. A tengu warrior of absolute conviction and military precision." },
+  { "id": "sayu",            "name": "Sayu",             "element": "anemo",   "weapon": "claymore", "rarity": 4, "nation": "Inazuma",   "constellation": "Nyctereutes Minor",   "title": "Dart Viper",                      "description": "A young ninja of the Shuumatsuban who is exceptionally good at hiding and sleeping. She worries her napping prevents her from growing taller." },
+  { "id": "sethos",          "name": "Sethos",           "element": "electro", "weapon": "bow",      "rarity": 4, "nation": "Sumeru",    "constellation": "Arcus Triumphans",    "title": "Desert Recluse",                  "description": "A young desert wanderer with mysterious ties to ancient Sumeru ruins. He moves through the sands like a shadow." },
+  { "id": "shenhe",          "name": "Shenhe",           "element": "cryo",    "weapon": "polearm",  "rarity": 5, "nation": "Liyue",     "constellation": "Crista Doloris",      "title": "Lonesome Transcendence",          "description": "An adepti disciple who has sealed her emotions away following a difficult past. She helps others from a quiet, lonely distance." },
+  { "id": "shikanoin-heizou","name": "Shikanoin Heizou", "element": "anemo",   "weapon": "catalyst", "rarity": 4, "nation": "Inazuma",   "constellation": "Cervus Unicorn",      "title": "Paradoxical Detective",           "description": "A detective of the Tenryou Commission who solves cases his own unconventional way. Eccentric and self-assured, he rarely follows the rules." },
+  { "id": "sigewinne",       "name": "Sigewinne",        "element": "hydro",   "weapon": "bow",      "rarity": 5, "nation": "Fontaine",  "constellation": "Homo Ballaenidae",    "title": "Little Nurse Extraordinaire",     "description": "Head Nurse of the Fortress of Meropide in Fontaine. She cares for prisoners with genuine warmth and a cheerful, unwavering dedication." },
+  { "id": "sucrose",         "name": "Sucrose",          "element": "anemo",   "weapon": "catalyst", "rarity": 4, "nation": "Mondstadt", "constellation": "Ampulla",             "title": "Harmless Sweetie",                "description": "An alchemical researcher and Albedo's assistant. She pursues breakthroughs in bio-alchemy with endless enthusiasm and careful attention to detail." },
+  { "id": "tartaglia",       "name": "Tartaglia",        "element": "hydro",   "weapon": "bow",      "rarity": 5, "nation": "Snezhnaya", "constellation": "Monoceros Caeli",     "title": "Childe",                          "description": "Eleventh of the Fatui Harbingers. A lone warrior who emerged from the Abyss forever changed, one who now lives for the thrill of battle." },
+  { "id": "thoma",           "name": "Thoma",            "element": "pyro",    "weapon": "polearm",  "rarity": 4, "nation": "Inazuma",   "constellation": "Pyroflamma Ventosa",  "title": "Protector From Afar",             "description": "Housekeeper of the Kamisato Estate and fixer for Inazuma's foreign community. Warm and sociable, he helps outsiders navigate Inazuman society." },
+  { "id": "tighnari",        "name": "Tighnari",         "element": "dendro",  "weapon": "bow",      "rarity": 5, "nation": "Sumeru",    "constellation": "Vulpes Zerda",        "title": "Verdant Strider",                 "description": "Watcher of Gandharva Ville and a forest ranger in Sumeru. Patient and precise, he educates others about the forest with firm but genuine care." },
+  { "id": "venti",           "name": "Venti",            "element": "anemo",   "weapon": "bow",      "rarity": 5, "nation": "Mondstadt", "constellation": "Carmen Dei",          "title": "Windborne Bard",                  "description": "A bard who frequents the city of Mondstadt and loves wine. He is secretly Barbatos, the Anemo Archon and eternal protector of freedom." },
+  { "id": "wanderer",        "name": "Wanderer",         "element": "anemo",   "weapon": "catalyst", "rarity": 5, "nation": "Sumeru",    "constellation": "Peregrinus",          "title": "Eons Lost in an Instant",         "description": "Once known as Scaramouche, the sixth Fatui Harbinger. After severing his past, he wanders the world seeking his own meaning." },
+  { "id": "wriothesley",     "name": "Wriothesley",      "element": "cryo",    "weapon": "catalyst", "rarity": 5, "nation": "Fontaine",  "constellation": "Cerberus",            "title": "The Duke of Fortress Meropide",   "description": "Duke of Fontaine's underwater prison. A man of iron rules who rose from being an inmate to running the entire facility himself." },
+  { "id": "xiangling",       "name": "Xiangling",        "element": "pyro",    "weapon": "polearm",  "rarity": 4, "nation": "Liyue",     "constellation": "Trulla Culinaria",    "title": "Exquisite Delicacy",              "description": "Head chef at Wanmin Restaurant and an inventive culinary genius. She puts her beloved Guoba into every dish and will cook anything she finds." },
+  { "id": "xianyun",         "name": "Xianyun",          "element": "anemo",   "weapon": "catalyst", "rarity": 5, "nation": "Liyue",     "constellation": "Garuda",              "title": "White Crane Spreads Wings",       "description": "An adeptus who descends from Jueyun Karst. She has spent centuries learning human customs and now runs a teahouse in Liyue Harbor." },
+  { "id": "xiao",            "name": "Xiao",             "element": "anemo",   "weapon": "polearm",  "rarity": 5, "nation": "Liyue",     "constellation": "Alatus Nemeseos",     "title": "Guardian Yaksha",                 "description": "A yaksha adeptus who has guarded Liyue for millennia. He bears the weight of countless karmic sins and walks a solitary, painful path." },
+  { "id": "xilonen",         "name": "Xilonen",          "element": "geo",     "weapon": "sword",    "rarity": 5, "nation": "Natlan",    "constellation": "Aurum Crystallis",    "title": "Warrior of the Sun's Reign",      "description": "A Loom-Keeper from Natlan and devoted disciple of the sun. She battles with golden geo energy and a spirit forged in fire." },
+  { "id": "xingqiu",         "name": "Xingqiu",          "element": "hydro",   "weapon": "sword",    "rarity": 4, "nation": "Liyue",     "constellation": "Fabulae Textile",     "title": "Juvenile Galant",                 "description": "Second son of the Feiyun Commerce Guild. A book-loving young noble who wields the Guhua Sword Art with elegance and quiet ambition." },
+  { "id": "xinyan",          "name": "Xinyan",           "element": "pyro",    "weapon": "claymore", "rarity": 4, "nation": "Liyue",     "constellation": "Fila Ignium",         "title": "Rock 'N' Roll Wildfire",          "description": "Liyue's first and only rock musician. She plays with explosive passion and works hard to win fans for a genre the city isn't sure it's ready for." },
+  { "id": "yae-miko",        "name": "Yae Miko",         "element": "electro", "weapon": "catalyst", "rarity": 5, "nation": "Inazuma",   "constellation": "Divina Vulpes",       "title": "Guuji",                           "description": "Guuji of the Grand Narukami Shrine and editor-in-chief of Yae Publishing House. An ancient kitsune with a sharp wit and inscrutable motives." },
+  { "id": "yanfei",          "name": "Yanfei",           "element": "pyro",    "weapon": "catalyst", "rarity": 4, "nation": "Liyue",     "constellation": "Bestia Iudicii",      "title": "Wise Innocence",                  "description": "A well-known legal adviser in Liyue. Half-adeptus by blood, she interprets Liyue's complex laws with enthusiasm and creative flair." },
+  { "id": "yaoyao",          "name": "Yaoyao",           "element": "dendro",  "weapon": "polearm",  "rarity": 4, "nation": "Liyue",     "constellation": "Osmanthus",           "title": "Burgeoning Grace",                "description": "Cloud Retainer's disciple and Ganyu's former junior. A cheerful and kind girl who heals with the power of radish-throwing Yuegui." },
+  { "id": "yelan",           "name": "Yelan",            "element": "hydro",   "weapon": "bow",      "rarity": 5, "nation": "Liyue",     "constellation": "Umbrabilis Circi",    "title": "Detective",                       "description": "A mysterious contract investigator who works in the shadows of Liyue. Her true allegiances are unknown, but her information is always accurate." },
+  { "id": "yoimiya",         "name": "Yoimiya",          "element": "pyro",    "weapon": "bow",      "rarity": 5, "nation": "Inazuma",   "constellation": "Carassius Auratus",   "title": "Queen of the Summer Festival",    "description": "Master of Naganohara Fireworks. She creates breathtaking fireworks displays and brings joy to everyone around her with radiant enthusiasm." },
+  { "id": "yun-jin",         "name": "Yun Jin",          "element": "geo",     "weapon": "polearm",  "rarity": 4, "nation": "Liyue",     "constellation": "Opera Grandis",       "title": "Stage Lucida",                    "description": "Director and lead actress of the Yun-Han Opera Troupe. A passionate performer who carries on traditional Liyue opera with modern dedication." },
+  { "id": "zhongli",         "name": "Zhongli",          "element": "geo",     "weapon": "polearm",  "rarity": 5, "nation": "Liyue",     "constellation": "Lapis Dei",           "title": "Vago Mundo",                      "description": "A consultant for the Wangsheng Funeral Parlor who seems to know everything about Liyue's history. He is secretly Rex Lapis, the Geo Archon." },
+{
+  "id": "nefer",
+  "name": "Nefer",
+  "element": "dendro",   
+  "weapon": "catalyst", 
+  "rarity": 5,
+  "nation": "Nod-Krai",
+  "description": "The deceptions ends here"
+},
+
+{
+  "id": "lan yan",
+  "name": "Lan Yan",
+  "element": "anemo",   
+  "weapon": "catalyst", 
+  "rarity": 4,
+  "nation": "Liyue",
+  "description": "..."
+},
+
+{
+  "id": "yumemizuki mizuki",
+  "name": "Yumemizuki Mizuki",
+  "element": "anemo",   
+  "weapon": "catalyst", 
+  "rarity": 5,
+  "nation": "Inazuma",
+  "description": "..."
+},
+
+{
+  "id": "varesa",
+  "name": "Varesa",
+  "element": "electro",   
+  "weapon": "catalyst", 
+  "rarity": 5,
+  "nation": "Natlan",
+  "description": "..."
+},
+
+{
+  "id": "ıansan",
+  "name": "Iansan",
+  "element": "anemo",   
+  "weapon": "polearm", 
+  "rarity": 4,
+  "nation": "Natlan",
+  "description": "..."
+},
+
+
+{
+    "id": "ifa",
+    "name": "Ifa",
+    "element": "anemo",
+    "weapon": "catalyst",
+    "rarity": 4,
+    "nation": "Natlan",
+    "constellation": "Unknown",
+    "title": "..",
+    "description": "..."
+},
+
+{
+    "id": "escoffier",
+    "name": "Escoffier",
+    "element": "cryo",
+    "weapon": "polearm",
+    "rarity": 5,
+    "nation": "Fontaine",
+    "constellation": "...",
+    "title": "...",
+    "description": "..."
+},
+
+{
+    "id": "skirk",
+    "name": "Skirk",
+    "element": "cryo",
+    "weapon": "sword",
+    "rarity": 5,
+    "nation": "Abyss",
+    "constellation": "Unknown",
+    "title": "The Foul's Disciple",
+    "description": "A mysterious swordswoman and Childe's master who dwells in the darkest corners of the Abyss."
+  },
+
+  {
+    "id": "dahlia",
+    "name": "Dahlia",
+    "element": "hydro",
+    "weapon": "catalyst",
+    "rarity": 4,
+    "nation": "Mondstadt",
+    "constellation": "Unknown",
+    "title": "Deacon of the Church",
+    "description": "A deacon of the Church of Favonius in Mondstadt, known for his calm demeanor and dedication."
+  },
+
+  {
+    "id": "ineffa",
+    "name": "Ineffa",
+    "element": "electro",
+    "weapon": "Polearm",
+    "rarity": 5,
+    "nation": "Nod-Krai",
+    "constellation": "Cyperus Mechanica",
+    "title": "Data Weaver",
+    "description": "Gelişmiş teknolojiyi Elektro enerjisiyle birleştiren bir mühendis. Kulaklıkları ve visorü aracılığıyla savaş alanındaki verileri gerçek zamanlı analiz eder."
+  },
+
+  {
+    "id": "lauma",
+    "name": "Lauma",
+    "element": "dendro",
+    "weapon": "catalyst",
+    "rarity": 5,
+    "nation": "Nod-Krai",
+    "constellation": "Sylva Spiritus",
+    "title": "Ancient Forest Whisperer",
+    "description": "..."
+  },
+
+  {
+    "id": "aino",
+    "name": "Aino",
+    "element": "hydro",
+    "weapon": "bow",
+    "rarity": 4,
+    "nation": "Fontaine",
+    "constellation": "Cygni Aqua",
+    "title": "Ocean's Melody",
+    "description": "A young enginner."
+  },
+
+  {
+    "id": "flins",
+    "name": "Flins",
+    "element": "electro",
+    "weapon": "catalyst",
+    "rarity": 5,
+    "nation": "Inazuma",
+    "constellation": "Fulmen Sagitta",
+    "title": "Storm Chaser",
+    "description": ",,,,."
+  },
+
+
+  {
+    "id": "nefer",
+    "name": "Nefer",
+    "element": "dendro",
+    "weapon": "catalyst",
+    "rarity": 5,
+    "nation": "Sumeru",
+    "constellation": "Nilus Lotus",
+    "title": "Emerald Vizier",
+    "description": "A high-ranking official from the desert regions of Sumeru, using the power of flora to create lush oases in the sand."
+  },
+
+  {
+    "id": "jahoda",
+    "name": "Jahoda",
+    "element": "anemo",
+    "weapon": "bow",
+    "rarity": 4,
+    "nation": "Nod-Krai",
+    "constellation": "....",
+    "title": ".....",
+    "description": "......"
+  },
+
+
+  {
+    "id": "durin",
+    "name": "Durin",
+    "element": "pyro",
+    "weapon": "claymore",
+    "rarity": 5,
+    "nation": "Mondstadt",
+    "constellation": "Corvi Sanguinis",
+    "title": "Shadow of the Dragon",
+    "description": "A human personification of the fallen dragon Durin, seeking redemption through the searing flames of rebirth."
+  },
+
+ {
+    "id": "columbina",
+    "name": "Columbina",
+    "element": "hydro",
+    "weapon": "catalyst",
+    "rarity": 5,
+    "nation": "Nod-Krai",
+    "constellation": "Unknown",
+    "title": "The Damselette",
+    "description": "The Third of the Fatui Harbingers. Behind her innocent appearance lies a power that even Tartaglia fears."
+  },
+
+  {
+    "id": "zibai",
+    "name": "Zibai",
+    "element": "geo",
+    "weapon": "sword",
+    "rarity": 5,
+    "nation": "Liyue",
+    "constellation": "Aureum Draconis",
+    "title": "Jade Reflection",
+    "description": "A wandering scholar of the Guyun Stone Forest, seeking to uncover the ancient memories hidden within Teyvat's rock formations."
+  },
+
+  {
+    "id": "illuga",
+    "name": "Illuga",
+    "element": "geo",
+    "weapon": "polearm",
+    "rarity": 4,
+    "nation": "Nod-Krai",
+    "constellation": "Argentum Oculi",
+    "title": "Silent Frost Warden",
+    "description": "A stoic warrior who guards the silver mines of the north. His movements are as precise and unyielding as the stone he commands."
+  },
+
+  {
+    "id": "varka",
+    "name": "Varka",
+    "element": "anemo",
+    "weapon": "claymore",
+    "rarity": 5,
+    "nation": "Mondstadt",
+    "constellation": "Lupus Aureus",
+    "title": "Grand Master of the Knights of Favonius",
+    "description": "The legendary Knight of Boreas and current Grand Master of Mondstadt, currently leading an expedition."
+  },
+
+  {
+    "id": "linnea",
+    "name": "Linnea",
+    "element": "geo",
+    "weapon": "catalyst",
+    "rarity": 5,
+    "nation": "Nod-Krai",
+    "constellation": "Lepus Crystallus",
+    "title": "Pink Petal Alchemist",
+    "description": "A cheerful alchemist from Fontaine known for her unique ability to transmute minerals into beautiful, crystalline flowers."
+  }
+
+
+
+]

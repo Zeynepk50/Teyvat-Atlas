@@ -32,20 +32,11 @@
   </div>
 
 
-  <!-- Karakter detay paneli -->
-  <app-character-detail
-    *ngIf="selectedCharacter"
-    [character]="selectedCharacter"
-    (close)="selectedCharacter = null"
-  ></app-character-detail>
-
   <div class="grid" *ngIf="!loading && !error && characters.length > 0">
-  <app-character-card
-    *ngFor="let character of characters"
-    [character]="character"
-    (click)="selectedCharacter = character"
-  ></app-character-card>
-</div>
+    <div class="card-link" *ngFor="let character of characters" (click)="goTo(character.id)">
+      <app-character-card [character]="character"></app-character-card>
+    </div>
+  </div>
 
   <app-pagination
     *ngIf="!loading && totalPages > 1"

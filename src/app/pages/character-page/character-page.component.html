@@ -1,0 +1,48 @@
+﻿<div class="page-container">
+  <div *ngIf="loading" class="loading">Yükleniyor...</div>
+  <div *ngIf="error && !loading" class="error">{{ error }}</div>
+
+  <div *ngIf="character && !loading" class="detail-container">
+    <button class="back-btn" (click)="goBack()">← Geri</button>
+    
+    <div class="detail-card">
+      <div class="left-section">
+        <div class="portrait-wrap" [ngClass]="'glow-' + character.element">
+          <img [src]="character.portraitUrl || character.iconUrl" [alt]="character.name" class="portrait" />
+        </div>
+        <div class="stars">
+          <span *ngFor="let s of [1,2,3,4,5].slice(0, character.rarity)" class="star">★</span>
+        </div>
+      </div>
+
+      <div class="right-section">
+        <p class="detail-title" *ngIf="character.title">{{ character.title }}</p>
+        <h1 class="detail-name">{{ character.name }}</h1>
+
+        <div class="detail-badges">
+          <span class="badge element-badge" [ngClass]="'tag-' + character.element">✦ {{ character.element | uppercase }}</span>
+          <span class="badge weapon-badge">⚔ {{ character.weapon | uppercase }}</span>
+          <span class="badge nation-badge" *ngIf="character.nation">⛳ {{ character.nation }}</span>
+          <span class="badge constellation-badge" *ngIf="character.constellation">✦ {{ character.constellation }}</span>
+          <span class="badge affiliation-badge" *ngIf="character.affiliation">🏛️ {{ character.affiliation }}</span>
+        </div>
+
+        <div class="description-section" *ngIf="character.description">
+          <h3>Açıklama</h3>
+          <p class="detail-description">{{ character.description }}</p>
+        </div>
+
+        <div class="api-details" *ngIf="rawDetail">
+          <h3>Ek Bilgiler</h3>
+          <div class="details-grid">
+            <div class="detail-item" *ngFor="let key of getDetailKeys()">
+              <strong>{{ formatKey(key) }}:</strong>
+              <span>{{ rawDetail[key] }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
