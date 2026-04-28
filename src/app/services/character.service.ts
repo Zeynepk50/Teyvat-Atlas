@@ -17,15 +17,15 @@ export class CharacterService {
   private buildCharacter(id: string, detail: CharacterDetail): Character {
     return {
       id,
-      name: detail.name,
+      name: detail.name || id,
       element: this.getElementFromDetail(detail),
-      weapon: this.normalizeWeapon(detail.weapontype),
-      rarity: (parseInt(detail.rarity) as 4 | 5) || 4,
-      nation: detail.nation,
-      affiliation: detail.affiliation,
-      description: detail.description,
-      iconUrl: `${this.BASE}/characters/${id}/icon`,
-      portraitUrl: `${this.BASE}/characters/${id}/portrait`,
+      weapon: this.getWeaponFromDetail(detail),
+      rarity: (parseInt((detail as any).rarity || detail.rarity) as 4 | 5) || 4,
+      nation: (detail as any).nation || detail.nation,
+      affiliation: (detail as any).affiliation || detail.affiliation,
+      description: (detail as any).description || detail.description,
+      iconUrl: (detail as any).iconUrl || (detail as any).icon || `${this.BASE}/characters/${id}/icon`,
+      portraitUrl: (detail as any).portraitUrl || (detail as any).portrait || `${this.BASE}/characters/${id}/portrait`,
     };
   }
 
@@ -76,6 +76,29 @@ export class CharacterService {
     if (detail.attributes && detail.attributes.vision) return this.normalizeElement(detail.attributes.vision);
 
     return 'geo';
+  }
+
+  private getWeaponFromDetail(detail: any) {
+    if (!detail) return 'sword';
+
+    const candidates = [
+      detail.weapontype,
+      detail.weapon,
+      detail.weapon_type,
+      detail.weaponType,
+      detail.type,
+    ];
+
+
+
+    ////tüm karakterlein sword olmasını engellemek için ekledim, bazı karakterlerde weaponType alanı var ama bazılarında yoktu, bu yüzden farklı alanları deniyorum.
+    for (const c of candidates) {
+      if (c) return this.normalizeWeapon(c as string);
+    }
+
+    if (detail.attributes && detail.attributes.weapon) return this.normalizeWeapon(detail.attributes.weapon);
+
+    return 'sword';
   }
 
   private normalizeWeapon(w?: string) {

@@ -91,5 +91,252 @@
   { "id": "yelan",           "name": "Yelan",            "element": "hydro",   "weapon": "bow",      "rarity": 5, "nation": "Liyue",     "constellation": "Umbrabilis Circi",    "title": "Detective",                       "description": "A mysterious contract investigator who works in the shadows of Liyue. Her true allegiances are unknown, but her information is always accurate." },
   { "id": "yoimiya",         "name": "Yoimiya",          "element": "pyro",    "weapon": "bow",      "rarity": 5, "nation": "Inazuma",   "constellation": "Carassius Auratus",   "title": "Queen of the Summer Festival",    "description": "Master of Naganohara Fireworks. She creates breathtaking fireworks displays and brings joy to everyone around her with radiant enthusiasm." },
   { "id": "yun-jin",         "name": "Yun Jin",          "element": "geo",     "weapon": "polearm",  "rarity": 4, "nation": "Liyue",     "constellation": "Opera Grandis",       "title": "Stage Lucida",                    "description": "Director and lead actress of the Yun-Han Opera Troupe. A passionate performer who carries on traditional Liyue opera with modern dedication." },
-  { "id": "zhongli",         "name": "Zhongli",          "element": "geo",     "weapon": "polearm",  "rarity": 5, "nation": "Liyue",     "constellation": "Lapis Dei",           "title": "Vago Mundo",                      "description": "A consultant for the Wangsheng Funeral Parlor who seems to know everything about Liyue's history. He is secretly Rex Lapis, the Geo Archon." }
+  { "id": "zhongli",         "name": "Zhongli",          "element": "geo",     "weapon": "polearm",  "rarity": 5, "nation": "Liyue",     "constellation": "Lapis Dei",           "title": "Vago Mundo",                      "description": "A consultant for the Wangsheng Funeral Parlor who seems to know everything about Liyue's history. He is secretly Rex Lapis, the Geo Archon." },
+{
+  "id": "nefer",
+  "name": "Nefer",
+  "element": "dendro",   
+  "weapon": "catalyst", 
+  "rarity": 5,
+  "nation": "Nod-Krai",
+  "description": "The deceptions ends here"
+},
+
+{
+  "id": "lan yan",
+  "name": "Lan Yan",
+  "element": "anemo",   
+  "weapon": "catalyst", 
+  "rarity": 4,
+  "nation": "Liyue",
+  "description": "..."
+},
+
+{
+  "id": "yumemizuki mizuki",
+  "name": "Yumemizuki Mizuki",
+  "element": "anemo",   
+  "weapon": "catalyst", 
+  "rarity": 5,
+  "nation": "Inazuma",
+  "description": "..."
+},
+
+{
+  "id": "varesa",
+  "name": "Varesa",
+  "element": "electro",   
+  "weapon": "catalyst", 
+  "rarity": 5,
+  "nation": "Natlan",
+  "description": "..."
+},
+
+{
+  "id": "ıansan",
+  "name": "Iansan",
+  "element": "anemo",   
+  "weapon": "polearm", 
+  "rarity": 4,
+  "nation": "Natlan",
+  "description": "..."
+},
+
+
+{
+    "id": "ifa",
+    "name": "Ifa",
+    "element": "anemo",
+    "weapon": "catalyst",
+    "rarity": 4,
+    "nation": "Natlan",
+    "constellation": "Unknown",
+    "title": "..",
+    "description": "..."
+},
+
+{
+    "id": "escoffier",
+    "name": "Escoffier",
+    "element": "cryo",
+    "weapon": "polearm",
+    "rarity": 5,
+    "nation": "Fontaine",
+    "constellation": "...",
+    "title": "...",
+    "description": "..."
+},
+
+{
+    "id": "skirk",
+    "name": "Skirk",
+    "element": "cryo",
+    "weapon": "sword",
+    "rarity": 5,
+    "nation": "Abyss",
+    "constellation": "Unknown",
+    "title": "The Foul's Disciple",
+    "description": "A mysterious swordswoman and Childe's master who dwells in the darkest corners of the Abyss."
+  },
+
+  {
+    "id": "dahlia",
+    "name": "Dahlia",
+    "element": "hydro",
+    "weapon": "catalyst",
+    "rarity": 4,
+    "nation": "Mondstadt",
+    "constellation": "Unknown",
+    "title": "Deacon of the Church",
+    "description": "A deacon of the Church of Favonius in Mondstadt, known for his calm demeanor and dedication."
+  },
+
+  {
+    "id": "ineffa",
+    "name": "Ineffa",
+    "element": "electro",
+    "weapon": "Polearm",
+    "rarity": 5,
+    "nation": "Nod-Krai",
+    "constellation": "Cyperus Mechanica",
+    "title": "Data Weaver",
+    "description": "Gelişmiş teknolojiyi Elektro enerjisiyle birleştiren bir mühendis. Kulaklıkları ve visorü aracılığıyla savaş alanındaki verileri gerçek zamanlı analiz eder."
+  },
+
+  {
+    "id": "lauma",
+    "name": "Lauma",
+    "element": "dendro",
+    "weapon": "catalyst",
+    "rarity": 5,
+    "nation": "Nod-Krai",
+    "constellation": "Sylva Spiritus",
+    "title": "Ancient Forest Whisperer",
+    "description": "..."
+  },
+
+  {
+    "id": "aino",
+    "name": "Aino",
+    "element": "hydro",
+    "weapon": "bow",
+    "rarity": 4,
+    "nation": "Fontaine",
+    "constellation": "Cygni Aqua",
+    "title": "Ocean's Melody",
+    "description": "A young enginner."
+  },
+
+  {
+    "id": "flins",
+    "name": "Flins",
+    "element": "electro",
+    "weapon": "catalyst",
+    "rarity": 5,
+    "nation": "Inazuma",
+    "constellation": "Fulmen Sagitta",
+    "title": "Storm Chaser",
+    "description": ",,,,."
+  },
+
+
+  {
+    "id": "nefer",
+    "name": "Nefer",
+    "element": "dendro",
+    "weapon": "catalyst",
+    "rarity": 5,
+    "nation": "Sumeru",
+    "constellation": "Nilus Lotus",
+    "title": "Emerald Vizier",
+    "description": "A high-ranking official from the desert regions of Sumeru, using the power of flora to create lush oases in the sand."
+  },
+
+  {
+    "id": "jahoda",
+    "name": "Jahoda",
+    "element": "anemo",
+    "weapon": "bow",
+    "rarity": 4,
+    "nation": "Nod-Krai",
+    "constellation": "....",
+    "title": ".....",
+    "description": "......"
+  },
+
+
+  {
+    "id": "durin",
+    "name": "Durin",
+    "element": "pyro",
+    "weapon": "claymore",
+    "rarity": 5,
+    "nation": "Mondstadt",
+    "constellation": "Corvi Sanguinis",
+    "title": "Shadow of the Dragon",
+    "description": "A human personification of the fallen dragon Durin, seeking redemption through the searing flames of rebirth."
+  },
+
+ {
+    "id": "columbina",
+    "name": "Columbina",
+    "element": "hydro",
+    "weapon": "catalyst",
+    "rarity": 5,
+    "nation": "Nod-Krai",
+    "constellation": "Unknown",
+    "title": "The Damselette",
+    "description": "The Third of the Fatui Harbingers. Behind her innocent appearance lies a power that even Tartaglia fears."
+  },
+
+  {
+    "id": "zibai",
+    "name": "Zibai",
+    "element": "geo",
+    "weapon": "sword",
+    "rarity": 5,
+    "nation": "Liyue",
+    "constellation": "Aureum Draconis",
+    "title": "Jade Reflection",
+    "description": "A wandering scholar of the Guyun Stone Forest, seeking to uncover the ancient memories hidden within Teyvat's rock formations."
+  },
+
+  {
+    "id": "illuga",
+    "name": "Illuga",
+    "element": "geo",
+    "weapon": "polearm",
+    "rarity": 4,
+    "nation": "Nod-Krai",
+    "constellation": "Argentum Oculi",
+    "title": "Silent Frost Warden",
+    "description": "A stoic warrior who guards the silver mines of the north. His movements are as precise and unyielding as the stone he commands."
+  },
+
+  {
+    "id": "varka",
+    "name": "Varka",
+    "element": "anemo",
+    "weapon": "claymore",
+    "rarity": 5,
+    "nation": "Mondstadt",
+    "constellation": "Lupus Aureus",
+    "title": "Grand Master of the Knights of Favonius",
+    "description": "The legendary Knight of Boreas and current Grand Master of Mondstadt, currently leading an expedition."
+  },
+
+  {
+    "id": "linnea",
+    "name": "Linnea",
+    "element": "geo",
+    "weapon": "catalyst",
+    "rarity": 5,
+    "nation": "Nod-Krai",
+    "constellation": "Lepus Crystallus",
+    "title": "Pink Petal Alchemist",
+    "description": "A cheerful alchemist from Fontaine known for her unique ability to transmute minerals into beautiful, crystalline flowers."
+  }
+
+
+
 ]
