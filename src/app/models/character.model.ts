@@ -12,6 +12,8 @@ export interface Character {
   weapon: WeaponType;
   rarity: 4 | 5;
   nation?: string;
+  constellation?: string; /////sonradan ekledim
+  title?: string;   /////sonradan ekledim.
   affiliation?: string;
   description?: string;
   iconUrl: string;

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, forkJoin, of } from 'rxjs';
-import { map, switchMap, tap } from 'rxjs/operators';
+import { map, switchMap, tap, catchError } from 'rxjs/operators';
 import { Character, CharacterDetail } from '../models/character.model';
 
 @Injectable({ providedIn: 'root' })
@@ -18,8 +18,8 @@ export class CharacterService {
     return {
       id,
       name: detail.name,
-      element: detail.element?.toLowerCase() as any,
-      weapon: detail.weapontype?.toLowerCase() as any,
+      element: this.getElementFromDetail(detail),
+      weapon: this.normalizeWeapon(detail.weapontype),
       rarity: (parseInt(detail.rarity) as 4 | 5) || 4,
       nation: detail.nation,
       affiliation: detail.affiliation,
@@ -29,22 +29,109 @@ export class CharacterService {
     };
   }
 
+  private normalizeElement(el?: string) {
+    if (!el) return 'geo';
+    const v = el.toLowerCase().trim();
+
+    // common synonyms mapping
+    const synonyms: Record<string, string> = {
+      wind: 'anemo',
+      breeze: 'anemo',
+      thunder: 'electro',
+      lightning: 'electro',
+      ice: 'cryo',
+      frost: 'cryo',
+      earth: 'geo',
+      stone: 'geo',
+      wood: 'dendro',
+      grass: 'dendro',
+      fire: 'pyro',
+      flame: 'pyro',
+      water: 'hydro',
+      aqua: 'hydro',
+    };
+
+    const mapped = synonyms[v] || v;
+    const allowed = ['pyro', 'hydro', 'anemo', 'electro', 'dendro', 'cryo', 'geo'];
+    return (allowed.includes(mapped) ? (mapped as any) : 'geo');
+  }
+
+  private getElementFromDetail(detail: any) {
+    if (!detail) return 'geo';
+    // try several possible fields that APIs might use
+    const candidates = [
+      detail.element,
+      detail.vision,
+      detail.vision_type,
+      detail.visionType,
+      detail.element_type,
+      detail.elementType,
+    ];
+
+    for (const c of candidates) {
+      if (c) return this.normalizeElement(c as string);
+    }
+
+    // sometimes API returns nested objects
+    if (detail.attributes && detail.attributes.vision) return this.normalizeElement(detail.attributes.vision);
+
+    return 'geo';
+  }
+
+  private normalizeWeapon(w?: string) {
+    if (!w) return 'sword';
+    const v = w.toLowerCase().trim();
+    const allowed = ['sword', 'claymore', 'polearm', 'bow', 'catalyst'];
+    return (allowed.includes(v) ? v : 'sword') as any;
+  }
+
   private loadAll(): Observable<Character[]> {
     if (this.cacheLoaded) return of(this.cache);
 
-    return this.http.get<string[]>(`${this.BASE}/characters`).pipe(
-      switchMap((ids) => {
-        const requests = ids.map((id) =>
+    return forkJoin([
+      this.http.get<string[]>(`${this.BASE}/characters`).pipe(catchError(() => of([] as string[]))),
+      this.http.get<any[]>('assets/characters.json').pipe(catchError(() => of([])))
+    ]).pipe(
+      switchMap(([apiIds, localChars]) => {
+        const ids = apiIds || [];
+
+        const apiRequests = ids.map((id) =>
           this.http.get<CharacterDetail>(`${this.BASE}/characters/${id}`).pipe(
-            map((detail) => this.buildCharacter(id, detail))
+            map((detail) => this.buildCharacter(id, detail)),
+            catchError(() => of(null))
           )
         );
-        return forkJoin(requests);
+
+        const locals = Array.isArray(localChars) ? localChars : (localChars ? [localChars] : []);
+        const localBuilt: Character[] = locals.map((l) => ({
+          id: l.id,
+          name: l.name,
+          element: this.normalizeElement(l.element),
+          weapon: this.normalizeWeapon(l.weapon),
+          rarity: (parseInt(l.rarity) as 4 | 5) || 4,
+          nation: l.nation,
+          affiliation: l.affiliation,
+          description: l.description,
+          iconUrl: l.iconUrl || `${this.BASE}/characters/${l.id}/icon`,
+          portraitUrl: l.portraitUrl || `${this.BASE}/characters/${l.id}/portrait`,
+        }));
+
+        const apiAll$ = apiRequests.length ? forkJoin(apiRequests) : of([] as any[]);
+
+        return apiAll$.pipe(
+          map((apiResults) => {
+            const apiChars = (apiResults || []).filter((c: any) => c) as Character[];
+            const apiIdSet = new Set(apiChars.map((c) => c.id));
+            const uniques = localBuilt.filter((c) => !apiIdSet.has(c.id));
+            return [...apiChars, ...uniques];
+          })
+        );
       }),
       tap((chars) => {
         this.cache = chars;
         this.cacheLoaded = true;
-      })
+      }),
+      catchError(() => of([] as Character[]))
     );
   }
 

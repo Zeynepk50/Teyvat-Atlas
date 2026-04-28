@@ -8,6 +8,7 @@ import { CharacterListComponent } from './components/character-list/character-li
 import { CharacterCardComponent } from './components/character-card/character-card.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { CharacterDetailComponent } from './components/character-detail/character-detail.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
     CharacterCardComponent,
     PaginationComponent,
     SearchBarComponent,
+    CharacterDetailComponent,
   ],
   imports: [BrowserModule, HttpClientModule, CommonModule],
   bootstrap: [AppComponent],

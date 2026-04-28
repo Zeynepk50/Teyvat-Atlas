@@ -1,0 +1,136 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(6px);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.panel {
+  position: relative;
+  background: linear-gradient(135deg, #16132a 0%, #0e0c1e 100%);
+  border: 1px solid rgba(255, 200, 100, 0.12);
+  border-radius: 20px;
+  padding: 2.5rem;
+  max-width: 680px;
+  width: 100%;
+  display: flex;
+  gap: 2rem;
+  animation: slideUp 0.25s ease;
+}
+
+@keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+$elements: (pyro:#ff6b35, hydro:#4fc3f7, anemo:#80cbc4, electro:#ce93d8, dendro:#aed581, cryo:#b3e5fc, geo:#ffcc02);
+
+@each $el, $color in $elements {
+  .panel-#{$el} { border-color: rgba($color, 0.2); }
+  .glow-#{$el} .portrait { filter: drop-shadow(0 0 20px rgba($color, 0.4)); }
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(255,255,255,0.06);
+  border: none;
+  color: rgba(255,255,255,0.4);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+  &:hover { background: rgba(255,255,255,0.12); color: #fff; }
+}
+
+.panel-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.portrait-wrap {
+  width: 130px;
+  height: 130px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.04);
+}
+
+.portrait {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: top;
+  transition: transform 0.3s ease;
+  &:hover { transform: scale(1.05); }
+}
+
+.stars { display: flex; gap: 2px; }
+.star { font-size: 14px; color: #f5c842; text-shadow: 0 0 8px rgba(245,200,66,0.6); }
+
+.panel-right { flex: 1; }
+
+.detail-title {
+  font-size: 12px;
+  color: rgba(240,220,170,0.4);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.detail-name {
+  font-size: 26px;
+  font-weight: 700;
+  color: #f0e6c8;
+  margin-bottom: 1rem;
+  letter-spacing: -0.3px;
+}
+
+.detail-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 1.25rem;
+}
+
+.badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.4px;
+}
+
+.weapon-badge     { background: rgba(255,255,255,0.07); color: rgba(240,220,170,0.6); }
+.nation-badge     { background: rgba(255,255,255,0.07); color: rgba(240,220,170,0.6); }
+.constellation-badge { background: rgba(255,195,70,0.1); color: rgba(245,200,66,0.7); }
+
+// element badge colors
+.tag-pyro    { background: rgba(255,107,53,0.2);  color: #ff9a6c; }
+.tag-hydro   { background: rgba(79,195,247,0.2);  color: #81d4fa; }
+.tag-anemo   { background: rgba(128,203,196,0.2); color: #b2dfdb; }
+.tag-electro { background: rgba(206,147,216,0.2); color: #e1bee7; }
+.tag-dendro  { background: rgba(174,213,129,0.2); color: #c5e1a5; }
+.tag-cryo    { background: rgba(179,229,252,0.2); color: #e1f5fe; }
+.tag-geo     { background: rgba(255,204,2,0.2);   color: #ffe57f; }
+
+.detail-description {
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(240,220,170,0.55);
+  font-style: italic;
+}

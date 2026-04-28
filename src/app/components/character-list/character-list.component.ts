@@ -67,4 +67,6 @@ export class CharacterListComponent implements OnInit {
   get endIndex(): number {
     return Math.min(this.currentPage * this.characterService.PAGE_SIZE, this.totalCount);
   }
+
+  selectedCharacter: Character | null = null;
 }

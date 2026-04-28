@@ -31,7 +31,7 @@
   </div>
   <div class="card-footer">
 
-  <div class="card-footer">
+  <!-- <div class="card-footer">
     <div class="char-name">{{ character.name }}</div>
 
     <div class="info-badges">
@@ -46,5 +46,19 @@
 
       <div class="weapon-badge">{{ weaponLabel }}</div>
     </div>
+  </div> -->
+
+
+
+
+
+  <div class="card-footer">
+  <div class="char-name">{{ character.name }}</div>
+  <div class="char-meta">
+    <span class="element-tag" [ngClass]="'tag-' + character.element">
+      {{ elementLabel }}
+    </span>
+    <span class="weapon-tag">{{ weaponLabel }}</span>
   </div>
+</div>
 </div>

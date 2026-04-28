@@ -201,6 +201,29 @@ $elements: (
   margin-top: 4px;
 }
 
+
+
+///////////////////Sonradan eklendi
+.element-tag {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+
+.tag-pyro    { background: rgba(255,107,53,0.2);  color: #ff9a6c; }
+.tag-hydro   { background: rgba(79,195,247,0.2);  color: #81d4fa; }
+.tag-anemo   { background: rgba(128,203,196,0.2); color: #b2dfdb; }
+.tag-electro { background: rgba(206,147,216,0.2); color: #e1bee7; }
+.tag-dendro  { background: rgba(174,213,129,0.2); color: #c5e1a5; }
+.tag-cryo    { background: rgba(179,229,252,0.2); color: #e1f5fe; }
+.tag-geo     { background: rgba(255,204,2,0.2);   color: #ffe57f; }
+
+
+
+
 .weapon-tag {
   font-size: 9px;
   font-weight: 600;
