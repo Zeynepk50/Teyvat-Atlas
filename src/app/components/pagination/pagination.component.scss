@@ -1,0 +1,61 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 2.5rem 0;
+}
+
+.pages {
+  display: flex;
+  gap: 4px;
+}
+
+.btn {
+  background: transparent;
+  border: 1px solid rgba(255, 200, 100, 0.12);
+  border-radius: 8px;
+  color: rgba(240, 220, 170, 0.5);
+  cursor: pointer;
+  font-size: 13px;
+  font-family: inherit;
+  font-weight: 500;
+  transition: all 0.15s ease;
+
+  &:hover:not(:disabled) {
+    background: rgba(255, 195, 70, 0.1);
+    color: #f5c842;
+    border-color: rgba(255, 195, 70, 0.3);
+  }
+
+  &:disabled {
+    opacity: 0.2;
+    cursor: not-allowed;
+  }
+
+  &.active {
+    background: rgba(255, 195, 70, 0.15);
+    border-color: rgba(255, 195, 70, 0.5);
+    color: #f5c842;
+    box-shadow: 0 0 12px rgba(255, 195, 70, 0.15);
+  }
+
+  &.dots {
+    border-color: transparent;
+    cursor: default;
+  }
+}
+
+.btn-nav {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-page {
+  min-width: 36px;
+  height: 36px;
+  padding: 0 4px;
+}

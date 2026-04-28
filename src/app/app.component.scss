@@ -1,0 +1,89 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  background: rgba(8, 6, 18, 0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 200, 100, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-emblem {
+  filter: drop-shadow(0 0 8px rgba(245, 200, 66, 0.4));
+  flex-shrink: 0;
+}
+
+.logo-title {
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+  color: #f0e6c8;
+  letter-spacing: 0.5px;
+}
+
+.logo-sub {
+  display: block;
+  font-size: 11px;
+  color: rgba(240, 220, 170, 0.35);
+  letter-spacing: 0.3px;
+}
+
+.header-deco {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.element-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  opacity: 0.7;
+
+  &.pyro    { background: #ff6b35; box-shadow: 0 0 6px #ff6b35; }
+  &.hydro   { background: #4fc3f7; box-shadow: 0 0 6px #4fc3f7; }
+  &.anemo   { background: #80cbc4; box-shadow: 0 0 6px #80cbc4; }
+  &.electro { background: #ce93d8; box-shadow: 0 0 6px #ce93d8; }
+  &.dendro  { background: #aed581; box-shadow: 0 0 6px #aed581; }
+  &.cryo    { background: #b3e5fc; box-shadow: 0 0 6px #b3e5fc; }
+  &.geo     { background: #ffcc02; box-shadow: 0 0 6px #ffcc02; }
+}
+
+.main {
+  flex: 1;
+  padding: 2rem 0;
+}
+
+.footer {
+  border-top: 1px solid rgba(255, 200, 100, 0.07);
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 12px;
+  color: rgba(240, 220, 170, 0.2);
+
+  a {
+    color: rgba(240, 220, 170, 0.35);
+    text-decoration: none;
+    &:hover { color: #f5c842; }
+  }
+}

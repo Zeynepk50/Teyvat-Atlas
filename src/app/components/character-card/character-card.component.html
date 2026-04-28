@@ -1,0 +1,50 @@
+<div
+  class="card"
+  [ngClass]="'element-' + character.element"
+  [class.rarity-5]="character.rarity === 5"
+  [class.rarity-4]="character.rarity === 4"
+>
+  <div class="card-bg-glow"></div>
+
+  <div class="card-top">
+    <div class="element-orb" [ngClass]="'orb-' + character.element">
+      <img
+        [src]="'https://genshin.jmp.blue/elements/' + character.element + '/icon'"
+        [alt]="elementLabel"
+        class="element-icon"
+        onerror="this.style.display='none'"
+      />
+    </div>
+    <div class="rarity-stars">
+      <span *ngFor="let s of stars" class="star">★</span>
+    </div>
+  </div>
+
+  <div class="card-portrait">
+    <img
+      [src]="character.iconUrl"
+      [alt]="character.name"
+      class="portrait-img"
+      (error)="onImgError($event)"
+      loading="lazy"
+    />
+  </div>
+  <div class="card-footer">
+
+  <div class="card-footer">
+    <div class="char-name">{{ character.name }}</div>
+
+    <div class="info-badges">
+      <div class="element-badge" [ngClass]="'element-' + character.element">
+        <img
+          [src]="'https://genshin.jmp.blue/elements/' + character.element + '/icon'"
+          [alt]="elementLabel"
+          class="element-badge-icon"
+        />
+        <span class="badge-label">{{ elementLabel }}</span>
+      </div>
+
+      <div class="weapon-badge">{{ weaponLabel }}</div>
+    </div>
+  </div>
+</div>

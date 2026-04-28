@@ -1,0 +1,24 @@
+<div class="pagination">
+  <button class="btn btn-nav" (click)="prev()" [disabled]="currentPage === 1">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <polyline points="15 18 9 12 15 6"></polyline>
+    </svg>
+  </button>
+
+  <div class="pages">
+    <button
+      *ngFor="let page of pages"
+      class="btn btn-page"
+      [class.active]="page === currentPage"
+      [class.dots]="page === '...'"
+      (click)="goTo(page)"
+      [disabled]="page === '...'"
+    >{{ page }}</button>
+  </div>
+
+  <button class="btn btn-nav" (click)="next()" [disabled]="currentPage === totalPages">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </button>
+</div>

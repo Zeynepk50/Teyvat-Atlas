@@ -1,0 +1,268 @@
+// Element color map
+$elements: (
+  pyro:    (#ff6b35, #ff9a6c, #3d1200),
+  hydro:   (#4fc3f7, #81d4fa, #001a2e),
+  anemo:   (#80cbc4, #b2dfdb, #00211f),
+  electro: (#ce93d8, #e1bee7, #2a0040),
+  dendro:  (#aed581, #c5e1a5, #1a2e00),
+  cryo:    (#b3e5fc, #e1f5fe, #00283a),
+  geo:     (#ffcc02, #ffe57f, #2e1f00),
+);
+
+.card {
+  position: relative;
+  border-radius: 16px;
+  height: 230px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  background: linear-gradient(160deg, #1c1a2e 0%, #13111f 100%);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+
+  &:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+
+    .portrait-img {
+      transform: scale(1.08) translateY(-4px);
+    }
+  }
+
+  &.rarity-5 {
+    border-color: rgba(255, 180, 50, 0.25);
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 195, 70, 0.15);
+      pointer-events: none;
+    }
+  }
+
+  &.rarity-4 {
+    border-color: rgba(192, 192, 192, 0.18);
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 16px;
+      border: 1px solid rgba(200, 200, 200, 0.08);
+      pointer-events: none;
+    }
+  }
+
+  // subtle color overlays for rarity backgrounds
+  &.rarity-5::before,
+  &.rarity-4::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  &.rarity-5::before {
+    background: linear-gradient(160deg, rgba(255, 215, 90, 0.12), rgba(255, 190, 60, 0.04));
+    mix-blend-mode: screen;
+  }
+
+  &.rarity-4::before {
+    background: linear-gradient(160deg, rgba(200, 200, 200, 0.06), rgba(160, 160, 160, 0.02));
+    mix-blend-mode: screen;
+  }
+}
+
+// Per-element glow & tint
+@each $el, $colors in $elements {
+  $accent: nth($colors, 1);
+  $light:  nth($colors, 2);
+  $dark:   nth($colors, 3);
+
+  .card.element-#{$el} {
+    .card-bg-glow {
+      background: radial-gradient(ellipse at 50% 110%, rgba($accent, 0.22) 0%, transparent 70%);
+    }
+    .card-footer {
+      border-top: 1px solid rgba($accent, 0.18);
+      background: linear-gradient(0deg, rgba($dark, 0.85) 0%, transparent 100%);
+    }
+    &.rarity-5 {
+      box-shadow: 0 0 0 1px rgba($accent, 0.15),
+                  0 8px 32px rgba($accent, 0.08);
+    }
+  }
+
+  .orb-#{$el} {
+    background: rgba($accent, 0.18);
+    border: 1px solid rgba($accent, 0.35);
+    box-shadow: 0 0 10px rgba($accent, 0.25);
+  }
+}
+
+.card-bg-glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.card-top {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 2;
+}
+
+.element-orb {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.element-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  filter: brightness(1.3);
+}
+
+.rarity-stars {
+  display: flex;
+  gap: 1px;
+}
+
+.star {
+  font-size: 10px;
+  color: #f5c842;
+  text-shadow: 0 0 6px rgba(245, 200, 66, 0.7);
+
+  .rarity-5 & {
+    color: #ffd700;
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.8);
+  }
+}
+
+.card-portrait {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.portrait-img {
+  width: 130px;
+  height: 130px;
+  object-fit: contain;
+  object-position: top center;
+  transition: transform 0.3s ease;
+  filter: drop-shadow(0 6px 16px rgba(0,0,0,0.6));
+  margin-top: 16px;
+}
+
+.card-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px 12px;
+  z-index: 2;
+  backdrop-filter: blur(4px);
+}
+
+.char-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: #f0e6c8;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.char-meta {
+  display: flex;
+  gap: 5px;
+  margin-top: 4px;
+}
+
+.weapon-tag {
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: rgba(240, 220, 170, 0.55);
+}
+
+/* Info badges (element + weapon) */
+.info-badges {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 6px;
+}
+
+.element-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #fff;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.04);
+}
+
+.element-badge .element-badge-icon {
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+  filter: brightness(1.1) drop-shadow(0 2px 6px rgba(0,0,0,0.6));
+}
+
+.badge-label { color: inherit; }
+
+.weapon-badge {
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 700;
+  color: rgba(240,220,170,0.9);
+  background: rgba(0,0,0,0.12);
+  border: 1px solid rgba(255,255,255,0.02);
+}
+
+/* Per-element badge tinting */
+@each $el, $colors in $elements {
+  $accent: nth($colors, 1);
+  $light:  nth($colors, 2);
+  $dark:   nth($colors, 3);
+
+  .card.element-#{$el} {
+    .element-badge {
+      background: linear-gradient(90deg, rgba($accent,0.12), rgba($dark,0.06));
+      border: 1px solid rgba($accent, 0.22);
+      color: #fff;
+    }
+    .weapon-badge {
+      color: rgba($light, 0.95);
+    }
+  }
+}

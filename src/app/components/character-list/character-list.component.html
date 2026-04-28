@@ -1,0 +1,48 @@
+<div class="list-container">
+
+  <app-search-bar (searchChange)="onSearchChange($event)"></app-search-bar>
+
+  <div class="stats-bar" *ngIf="!loading && characters.length">
+    <span class="stats-text" *ngIf="isSearchMode">
+      <span class="badge">{{ totalCount }}</span> sonuç — "<strong>{{ searchQuery }}</strong>"
+    </span>
+    <span class="stats-text" *ngIf="!isSearchMode">
+      {{ startIndex }}–{{ endIndex }} / {{ totalCount }} karakter
+    </span>
+    <span class="stats-page">Sayfa {{ currentPage }} / {{ totalPages }}</span>
+  </div>
+
+  <div class="loading-state" *ngIf="loading">
+    <div class="vision-spinner">
+      <div class="vision-ring"></div>
+      <div class="vision-core"></div>
+    </div>
+    <p class="loading-text">{{ initialLoad ? 'Teyvat\'tan yükleniyor...' : 'Aranıyor...' }}</p>
+  </div>
+
+  <div class="error-state" *ngIf="error && !loading">
+    <p>⚠️ {{ error }}</p>
+    <button (click)="loadPage(currentPage)">Tekrar Dene</button>
+  </div>
+
+  <div class="empty-state" *ngIf="!loading && !error && characters.length === 0 && isSearchMode">
+    <div class="empty-icon">?</div>
+    <p class="empty-title">Karakter bulunamadı</p>
+    <p class="empty-sub">"{{ searchQuery }}" ile eşleşen karakter yok</p>
+  </div>
+
+  <div class="grid" *ngIf="!loading && !error && characters.length > 0">
+    <app-character-card
+      *ngFor="let character of characters"
+      [character]="character"
+    ></app-character-card>
+  </div>
+
+  <app-pagination
+    *ngIf="!loading && totalPages > 1"
+    [currentPage]="currentPage"
+    [totalPages]="totalPages"
+    (pageChange)="onPageChange($event)"
+  ></app-pagination>
+
+</div>
