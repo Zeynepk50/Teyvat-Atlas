@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CharacterService } from '../../services/character.service';
-import { Character } from '../../models/character.model';
+import { Character, Element } from '../../models/character.model';
 
 @Component({
   selector: 'app-character-list',
@@ -18,6 +18,8 @@ export class CharacterListComponent implements OnInit {
   error = '';
   searchQuery = '';
   isSearchMode = false;
+  selectedElement: Element | null = null;
+  elements: Element[] = ['pyro', 'hydro', 'anemo', 'electro', 'dendro', 'cryo', 'geo'];
 
   constructor(private characterService: CharacterService, private router: Router) {}
 
@@ -31,9 +33,14 @@ export class CharacterListComponent implements OnInit {
     this.currentPage = page;
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
-    const obs = this.isSearchMode && this.searchQuery
-      ? this.characterService.search(this.searchQuery, page)
-      : this.characterService.getPage(page);
+    let obs;
+    if (this.isSearchMode && this.searchQuery) {
+      obs = this.characterService.search(this.searchQuery, page);
+    } else if (this.selectedElement) {
+      obs = this.characterService.getPageByElement(page, this.selectedElement);
+    } else {
+      obs = this.characterService.getPage(page);
+    }
 
     obs.subscribe({
       next: ({ characters, total }) => {
@@ -54,6 +61,11 @@ export class CharacterListComponent implements OnInit {
   onSearchChange(query: string): void {
     this.searchQuery = query;
     this.isSearchMode = query.length > 0;
+    this.loadPage(1);
+  }
+
+  onElementSelect(element: Element | null): void {
+    this.selectedElement = this.selectedElement === element ? null : element;
     this.loadPage(1);
   }
 

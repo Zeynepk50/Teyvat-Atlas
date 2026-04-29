@@ -4,6 +4,67 @@
   padding: 0 1.5rem;
 }
 
+.element-filter {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.25);
+  }
+
+  &.active {
+    box-shadow: 0 0 12px rgba(255, 200, 100, 0.3);
+  }
+
+  &.element-pyro { 
+    &.active { background: rgba(255, 107, 53, 0.2); color: #ff9a6c; border-color: rgba(255, 107, 53, 0.4); }
+  }
+  &.element-hydro {
+    &.active { background: rgba(79, 195, 247, 0.2); color: #81d4fa; border-color: rgba(79, 195, 247, 0.4); }
+  }
+  &.element-anemo {
+    &.active { background: rgba(128, 203, 196, 0.2); color: #b2dfdb; border-color: rgba(128, 203, 196, 0.4); }
+  }
+  &.element-electro {
+    &.active { background: rgba(206, 147, 216, 0.2); color: #e1bee7; border-color: rgba(206, 147, 216, 0.4); }
+  }
+  &.element-dendro {
+    &.active { background: rgba(174, 213, 129, 0.2); color: #c5e1a5; border-color: rgba(174, 213, 129, 0.4); }
+  }
+  &.element-cryo {
+    &.active { background: rgba(179, 229, 252, 0.2); color: #e1f5fe; border-color: rgba(179, 229, 252, 0.4); }
+  }
+  &.element-geo {
+    &.active { background: rgba(255, 204, 2, 0.2); color: #ffe57f; border-color: rgba(255, 204, 2, 0.4); }
+  }
+}
+
+.filter-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
 .stats-bar {
   display: flex;
   align-items: center;

@@ -242,4 +242,17 @@ export class CharacterService {
       })
     );
   }
+
+  getPageByElement(page: number, element: string): Observable<{ characters: Character[]; total: number }> {
+    return this.loadAll().pipe(
+      map((all) => {
+        const filtered = all.filter((c) => c.element === element);
+        const start = (page - 1) * this.PAGE_SIZE;
+        return {
+          characters: filtered.slice(start, start + this.PAGE_SIZE),
+          total: filtered.length,
+        };
+      })
+    );
+  }
 }
