@@ -17,11 +17,11 @@ export class CharacterListComponent implements OnInit {
   initialLoad = true; // ilk yüklemede tüm detayları çekiyor, farklı mesaj
   error = '';
   searchQuery = '';
-  isSearchMode = false;
-  selectedElement: Element | null = null;
+  // isSearchMode property removed, replaced by getter
+  selectedElements: Element[] = [];
   elements: Element[] = ['pyro', 'hydro', 'anemo', 'electro', 'dendro', 'cryo', 'geo'];
 
-  constructor(private characterService: CharacterService, private router: Router) {}
+  constructor(private characterService: CharacterService, private router: Router) { }
 
   ngOnInit(): void {
     this.loadPage(1);
@@ -33,17 +33,10 @@ export class CharacterListComponent implements OnInit {
     this.currentPage = page;
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
-    let obs;
-    if (this.isSearchMode && this.searchQuery) {
-      obs = this.characterService.search(this.searchQuery, page);
-    } else if (this.selectedElement) {
-      obs = this.characterService.getPageByElement(page, this.selectedElement);
-    } else {
-      obs = this.characterService.getPage(page);
-    }
+    const obs = this.characterService.getCharacters(page, this.searchQuery, this.selectedElements);
 
     obs.subscribe({
-      next: ({ characters, total }) => {
+      next: ({ characters, total }: { characters: Character[]; total: number }) => {
         this.characters = characters;
         this.totalCount = total;
         this.totalPages = Math.ceil(total / this.characterService.PAGE_SIZE);
@@ -58,14 +51,22 @@ export class CharacterListComponent implements OnInit {
     });
   }
 
+  get isSearchMode(): boolean {
+    return this.searchQuery.length > 0 || this.selectedElements.length > 0;
+  }
+
   onSearchChange(query: string): void {
     this.searchQuery = query;
-    this.isSearchMode = query.length > 0;
     this.loadPage(1);
   }
 
-  onElementSelect(element: Element | null): void {
-    this.selectedElement = this.selectedElement === element ? null : element;
+  onElementSelect(element: Element): void {
+    const index = this.selectedElements.indexOf(element);
+    if (index > -1) {
+      this.selectedElements = this.selectedElements.filter(e => e !== element);
+    } else {
+      this.selectedElements = [...this.selectedElements, element];
+    }
     this.loadPage(1);
   }
 

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, forkJoin, of, throwError } from 'rxjs';
 import { map, switchMap, tap, catchError } from 'rxjs/operators';
-import { Character, CharacterDetail } from '../models/character.model';
+import { Character, CharacterDetail, Element } from '../models/character.model';
 
 @Injectable({ providedIn: 'root' })
 export class CharacterService {
@@ -224,29 +224,25 @@ export class CharacterService {
     );
   }
 
-  search(query: string, page: number): Observable<{ characters: Character[]; total: number }> {
+  getCharacters(page: number, query?: string, elements?: Element[]): Observable<{ characters: Character[]; total: number }> {
     return this.loadAll().pipe(
       map((all) => {
-        const q = query.toLowerCase().trim();
-        const filtered = all.filter((c) => {
-          const name = (c.name || '').toLowerCase();
-          const element = (c.element || '').toLowerCase();
-          const weapon = (c.weapon || '').toLowerCase();
-          return name.includes(q) || element.includes(q) || weapon.includes(q);
-        });
-        const start = (page - 1) * this.PAGE_SIZE;
-        return {
-          characters: filtered.slice(start, start + this.PAGE_SIZE),
-          total: filtered.length,
-        };
-      })
-    );
-  }
+        let filtered = all;
 
-  getPageByElement(page: number, element: string): Observable<{ characters: Character[]; total: number }> {
-    return this.loadAll().pipe(
-      map((all) => {
-        const filtered = all.filter((c) => c.element === element);
+        if (query) {
+          const q = query.toLowerCase().trim();
+          filtered = filtered.filter((c) => {
+            const name = (c.name || '').toLowerCase();
+            const element = (c.element || '').toLowerCase();
+            const weapon = (c.weapon || '').toLowerCase();
+            return name.includes(q) || element.includes(q) || weapon.includes(q);
+          });
+        }
+
+        if (elements && elements.length > 0) {
+          filtered = filtered.filter((c) => elements.includes(c.element));
+        }
+
         const start = (page - 1) * this.PAGE_SIZE;
         return {
           characters: filtered.slice(start, start + this.PAGE_SIZE),

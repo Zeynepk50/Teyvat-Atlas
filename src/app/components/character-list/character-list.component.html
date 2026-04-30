@@ -6,7 +6,7 @@
     <button *ngFor="let element of elements" 
             class="filter-btn"
             [ngClass]="'element-' + element"
-            [class.active]="selectedElement === element"
+            [class.active]="selectedElements.includes(element)"
             (click)="onElementSelect(element)">
       <img [src]="'https://genshin.jmp.blue/elements/' + element + '/icon'" 
            [alt]="element"
@@ -18,7 +18,7 @@
 
   <div class="stats-bar" *ngIf="!loading && characters.length">
     <span class="stats-text" *ngIf="isSearchMode">
-      <span class="badge">{{ totalCount }}</span> sonuç — "<strong>{{ searchQuery }}</strong>"
+      <span class="badge">{{ totalCount }}</span> sonuç<span *ngIf="searchQuery"> — "<strong>{{ searchQuery }}</strong>"</span>
     </span>
     <span class="stats-text" *ngIf="!isSearchMode">
       {{ startIndex }}–{{ endIndex }} / {{ totalCount }} karakter
@@ -42,7 +42,8 @@
   <div class="empty-state" *ngIf="!loading && !error && characters.length === 0 && isSearchMode">
     <div class="empty-icon">?</div>
     <p class="empty-title">Karakter bulunamadı</p>
-    <p class="empty-sub">"{{ searchQuery }}" ile eşleşen karakter yok</p>
+    <p class="empty-sub" *ngIf="searchQuery">"{{ searchQuery }}" ile eşleşen karakter yok</p>
+    <p class="empty-sub" *ngIf="!searchQuery && selectedElements.length > 0">Seçili elementlere uygun karakter bulunamadı</p>
   </div>
 
 
