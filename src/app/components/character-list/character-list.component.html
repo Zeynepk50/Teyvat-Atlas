@@ -16,6 +16,15 @@
     </button>
   </div>
 
+  <div class="weapon-filter">
+    <button *ngFor="let weapon of weapons" 
+            class="filter-btn weapon-btn"
+            [class.active]="selectedWeapons.includes(weapon)"
+            (click)="onWeaponSelect(weapon)">
+      <span>{{ weapon | uppercase }}</span>
+    </button>
+  </div>
+
   <div class="stats-bar" *ngIf="!loading && characters.length">
     <span class="stats-text" *ngIf="isSearchMode">
       <span class="badge">{{ totalCount }}</span> sonuç<span *ngIf="searchQuery"> — "<strong>{{ searchQuery }}</strong>"</span>

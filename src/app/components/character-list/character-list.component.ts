@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CharacterService } from '../../services/character.service';
-import { Character, Element } from '../../models/character.model';
+import { Character, Element, WeaponType } from '../../models/character.model';
 
 @Component({
   selector: 'app-character-list',
@@ -20,6 +20,9 @@ export class CharacterListComponent implements OnInit {
   // isSearchMode property removed, replaced by getter
   selectedElements: Element[] = [];
   elements: Element[] = ['pyro', 'hydro', 'anemo', 'electro', 'dendro', 'cryo', 'geo'];
+  
+  selectedWeapons: WeaponType[] = [];
+  weapons: WeaponType[] = ['sword', 'claymore', 'polearm', 'bow', 'catalyst'];
 
   constructor(private characterService: CharacterService, private router: Router) { }
 
@@ -33,7 +36,7 @@ export class CharacterListComponent implements OnInit {
     this.currentPage = page;
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
-    const obs = this.characterService.getCharacters(page, this.searchQuery, this.selectedElements);
+    const obs = this.characterService.getCharacters(page, this.searchQuery, this.selectedElements, this.selectedWeapons);
 
     obs.subscribe({
       next: ({ characters, total }: { characters: Character[]; total: number }) => {
@@ -52,7 +55,7 @@ export class CharacterListComponent implements OnInit {
   }
 
   get isSearchMode(): boolean {
-    return this.searchQuery.length > 0 || this.selectedElements.length > 0;
+    return this.searchQuery.length > 0 || this.selectedElements.length > 0 || this.selectedWeapons.length > 0;
   }
 
   onSearchChange(query: string): void {
@@ -66,6 +69,16 @@ export class CharacterListComponent implements OnInit {
       this.selectedElements = this.selectedElements.filter(e => e !== element);
     } else {
       this.selectedElements = [...this.selectedElements, element];
+    }
+    this.loadPage(1);
+  }
+
+  onWeaponSelect(weapon: WeaponType): void {
+    const index = this.selectedWeapons.indexOf(weapon);
+    if (index > -1) {
+      this.selectedWeapons = this.selectedWeapons.filter(w => w !== weapon);
+    } else {
+      this.selectedWeapons = [...this.selectedWeapons, weapon];
     }
     this.loadPage(1);
   }

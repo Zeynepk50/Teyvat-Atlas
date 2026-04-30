@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, forkJoin, of, throwError } from 'rxjs';
 import { map, switchMap, tap, catchError } from 'rxjs/operators';
-import { Character, CharacterDetail, Element } from '../models/character.model';
+import { Character, CharacterDetail, Element, WeaponType } from '../models/character.model';
 
 @Injectable({ providedIn: 'root' })
 export class CharacterService {
@@ -12,7 +12,7 @@ export class CharacterService {
   private cache: Character[] = [];
   private cacheLoaded = false;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   private buildCharacter(id: string, detail: CharacterDetail): Character {
     return {
@@ -224,7 +224,7 @@ export class CharacterService {
     );
   }
 
-  getCharacters(page: number, query?: string, elements?: Element[]): Observable<{ characters: Character[]; total: number }> {
+  getCharacters(page: number, query?: string, elements?: Element[], weapons?: WeaponType[]): Observable<{ characters: Character[]; total: number }> {   ///element ve silah türüne göre seçim
     return this.loadAll().pipe(
       map((all) => {
         let filtered = all;
@@ -241,6 +241,10 @@ export class CharacterService {
 
         if (elements && elements.length > 0) {
           filtered = filtered.filter((c) => elements.includes(c.element));
+        }
+
+        if (weapons && weapons.length > 0) {
+          filtered = filtered.filter((c) => weapons.includes(c.weapon));
         }
 
         const start = (page - 1) * this.PAGE_SIZE;
