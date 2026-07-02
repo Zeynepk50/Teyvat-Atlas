@@ -108,4 +108,32 @@ export class CharacterPageComponent implements OnInit, OnDestroy {
       return key || 'Bilinmiyor';
     }
   }
+
+  formatValue(val: any): string {
+    if (val == null) return '—';
+    
+    // Eğer bir dizi ise (örn: skillTalents dizisi)
+    if (Array.isArray(val)) {
+      return val
+        .map(item => this.formatValue(item))
+        .filter(str => str !== '')
+        .join(', ');
+    }
+
+    // Eğer bir nesne/obje ise
+    if (typeof val === 'object') {
+      // Eğer yetenek veya takımyıldızı objesiyse (name alanı varsa adını gösterelim)
+      if (val.name) {
+        return val.name;
+      }
+      
+      // CV (Seslendirmen) objesi ise { english: '...', japanese: '...' }
+      return Object.entries(val)
+        .filter(([, v]) => v != null && v !== '')
+        .map(([k, v]) => `${this.formatKey(k)}: ${v}`)
+        .join(' • ');
+    }
+
+    return String(val);
+  }
 }

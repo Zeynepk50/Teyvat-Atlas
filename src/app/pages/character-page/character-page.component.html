@@ -43,7 +43,7 @@
           <div class="details-grid">
             <div class="detail-item" *ngFor="let key of getDetailKeys()">
               <strong>{{ formatKey(key) }}:</strong>
-              <span>{{ rawDetail[key] }}</span>
+              <span>{{ formatValue(rawDetail[key]) }}</span>
             </div>
           </div>
         </div>
