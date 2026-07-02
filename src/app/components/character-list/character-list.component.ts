@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CharacterService } from '../../services/character.service';
 import { Character, Element, WeaponType } from '../../models/character.model';
 
@@ -24,10 +24,11 @@ export class CharacterListComponent implements OnInit {
   selectedWeapons: WeaponType[] = [];
   weapons: WeaponType[] = ['sword', 'claymore', 'polearm', 'bow', 'catalyst'];
 
-  constructor(private characterService: CharacterService, private router: Router) { }
+  constructor(private characterService: CharacterService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.loadPage(1);
+    const page = Number(this.route.snapshot.queryParamMap.get('page')) || 1;
+    this.loadPage(page);
   }
 
   loadPage(page: number): void {
@@ -96,6 +97,6 @@ export class CharacterListComponent implements OnInit {
   }
 
   goTo(id: string) {
-    this.router.navigate(['/character', id]);
+    this.router.navigate(['/character', id], { queryParams: { from: this.currentPage } });
   }
 }

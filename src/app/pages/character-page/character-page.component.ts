@@ -75,7 +75,9 @@ export class CharacterPageComponent implements OnInit, OnDestroy {
   }
 
   goBack() {
-    this.router.navigate(['/']);
+    const fromPage = this.route.snapshot.queryParamMap.get('from');
+    const page = fromPage ? Number(fromPage) : 1;
+    this.router.navigate(['/'], { queryParams: page > 1 ? { page } : {} });
   }
 
   getDetailKeys(): string[] {

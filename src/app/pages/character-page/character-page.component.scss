@@ -38,13 +38,15 @@
 .nation-badge { background: rgba(100, 180, 150, 0.1); color: rgba(200, 255, 220, 0.9); }
 .constellation-badge { background: rgba(200, 180, 255, 0.1); color: rgba(220, 200, 255, 0.9); }
 .affiliation-badge { background: rgba(200, 150, 100, 0.1); color: rgba(255, 200, 150, 0.9); }
-.description-section { margin-top: 12px; padding-top: 16px; border-top: 1px solid rgba(255, 255, 255, 0.08);
-  h3 { font-size: 13px; text-transform: uppercase; color: rgba(255, 255, 255, 0.6); margin: 0 0 8px; letter-spacing: 0.8px; }
+.info-card { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 16px 20px; transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  &:hover { border-color: rgba(255, 255, 255, 0.18); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); }
 }
-.detail-description { color: rgba(255, 255, 255, 0.75); line-height: 1.6; margin: 0; font-size: 14px; }
-.api-details { margin-top: 20px; padding-top: 16px; border-top: 1px solid rgba(255, 255, 255, 0.08);
-  h3 { font-size: 13px; text-transform: uppercase; color: rgba(255, 255, 255, 0.6); margin: 0 0 12px; letter-spacing: 0.8px; }
+.info-card-header { display: flex; align-items: center; gap: 8px; margin-bottom: 12px;
+  h3 { font-size: 12px; text-transform: uppercase; color: rgba(255, 255, 255, 0.5); margin: 0; letter-spacing: 1px; font-weight: 700; }
 }
+.info-card-icon { font-size: 16px; line-height: 1; }
+.description-section { }
+.api-details { }
 .details-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
   @media (max-width: 768px) { grid-template-columns: 1fr; }
 }
